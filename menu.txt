@@ -1,0 +1,8 @@
+Cos
+cos
+KOSINUS
+
+p - dodaj pociaga
+c - dodaj pasazera 
+
+w - wypisz wszystko
