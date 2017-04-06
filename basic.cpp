@@ -7,11 +7,8 @@
 
 #include "pasazer.h"
 #include "pociag.h"
-#include "basic.h"
-/*
-vector<Pociag> pociagi; //maksymalna ilosc pociagow
-vector<Pociag>::iterator pociagowIteratior;
-pociagowIteratior = pociagi.begin();*/
+//#include "basic.h"
+
 //aaaaa lets burn it
 
 
@@ -41,45 +38,36 @@ void dzialaj(void)
 		Pociag *nowy = new Pociag;
 		puts("Prosze wybrac jedno z opcji:");
 		wypiszMenu();
-		eraseCIN();
+		//eraseCIN();
 		std::cin>>wybor;
-		
+		struct listaPasazerow *iterator;
 		switch (wybor)
 		{
-			case 'p': 
+			case 'p':
 			{
 				//coscos;
-				
-				
-				
 				//std::cout << "Dodajmy pierwszego pasazera\n";
 				//nowy->dodajPasazera();
 				#ifdef DEBUG_
 				std::cout << "Dodano pociag\n";
-				
 				#endif
-
 				break;
 			}
-			case 'c': 
+			case 'c':
 			{
 				nowy->dodajPasazera();
-				
 				break;
 			}
 			case 'w':
 				{
-					struct listaPasazerow *iterator = nowy->pierwszy;
+					iterator = nowy->pierwszy;
 					std::cout << "IMIE\tNAZWISKO\n";
 					while(iterator)
 					{
-						std::cout << iterator->n->dajImie() << '\t' << iterator->n->dajNazwisko();
+						std::cout << (iterator->n)->dajImie() << '\t' << (iterator->n)->dajNazwisko();
 					}
 				}
 		}
-		
-		
-		
 	}
 
 }//dzialaj

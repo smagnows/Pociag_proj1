@@ -1,3 +1,4 @@
+#define DEBUG_
 #include <iostream>
 
 //dopisywac kolejne naglowkowe, nie wszystkie, poniewusz to jest klasa glowna
@@ -9,7 +10,8 @@ void eraseCIN(void);
 //
 Pociag::Pociag()
 {
-	dodajPasazera();
+	aktualny=NULL;
+	//dodajPasazera();
 }
 Pociag::~Pociag()
 {
@@ -45,13 +47,19 @@ void Pociag::dodajPasazera(void)
 	nju->nast = NULL;
 	if(aktualny) 
 	{
+		#ifdef DEBUG_
+		puts("Aktualny istnieje chyba");
+		#endif
 		nju->poprz = aktualny;
 		aktualny->nast = nju;
-		
+		aktualny = nju;
 		
 	}
 	else 
 	{
+		#ifdef DEBUG_
+		puts("Aktualni nie istnieje, zrobmy sem listem");
+		#endif
 		nju->poprz = NULL;
 		pierwszy = nju;
 		aktualny = pierwszy;
